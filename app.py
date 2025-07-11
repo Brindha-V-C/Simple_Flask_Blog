@@ -9,7 +9,7 @@ app = Flask(__name__)
 # Config
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///blogs.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-app.config['SECRET_KEY'] = '7169dec5fb54a733a218324b16a6b3d3057ca42f56f67b27c15e9bab11ed41fc'
+app.config['SECRET_KEY'] = ' '
 
 # Initialize
 db = SQLAlchemy(app)
