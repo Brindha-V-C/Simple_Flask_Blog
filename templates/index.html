@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+<<<<<<< HEAD
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -172,4 +173,533 @@
 
 </body>
 
+=======
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Home | FlaskBlog</title>
+
+  <!-- Bootstrap 5 CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+      --accent-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+      --dark-bg: #0a0e27;
+      --darker-bg: #060920;
+      --card-bg: rgba(255, 255, 255, 0.95);
+      --text-primary: #2d3748;
+      --text-secondary: #718096;
+      --border-color: rgba(255, 255, 255, 0.1);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--dark-bg);
+      background-image: 
+        radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.3) 0%, transparent 50%),
+        radial-gradient(circle at 40% 40%, rgba(120, 200, 255, 0.2) 0%, transparent 50%);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      line-height: 1.6;
+    }
+
+    main {
+      flex: 1;
+      padding: 0;
+    }
+
+    /* Navbar Styles */
+    .navbar {
+      background: rgba(6, 9, 32, 0.95);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border-color);
+      padding: 1rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .navbar-brand {
+      font-weight: 700;
+      font-size: 1.5rem;
+      background: var(--primary-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+    }
+
+    .navbar-brand:hover {
+      text-decoration: none;
+    }
+
+    .navbar-nav {
+      align-items: center;
+    }
+
+    .nav-item {
+      margin: 0 0.25rem;
+    }
+
+    .nav-link {
+      color: #e2e8f0 !important;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      position: relative;
+      padding: 0.75rem 1rem !important;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+    }
+
+    .nav-link:hover {
+      color: #7c3aed !important;
+      background: rgba(124, 58, 237, 0.1);
+      transform: translateY(-1px);
+      text-decoration: none;
+    }
+
+    .nav-link i {
+      font-size: 1rem;
+    }
+
+    .navbar-text {
+      color: #a0aec0 !important;
+      font-weight: 500;
+      margin: 0 0.5rem;
+      padding: 0.5rem 1rem;
+      background: rgba(160, 174, 192, 0.1);
+      border-radius: 25px;
+      display: flex;
+      align-items: center;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .navbar-text i {
+      margin-right: 0.5rem;
+    }
+
+    .navbar-toggler {
+      border: none;
+      padding: 0.5rem;
+    }
+
+    .navbar-toggler:focus {
+      box-shadow: none;
+    }
+
+    /* Hero Section */
+    .hero-section {
+      padding: 6rem 0 4rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-title {
+      font-size: 3.5rem;
+      font-weight: 800;
+      color: white;
+      margin-bottom: 1.5rem;
+      text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+    }
+
+    .hero-subtitle {
+      font-size: 1.25rem;
+      color: #cbd5e0;
+      margin-bottom: 4rem;
+      font-weight: 400;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.6;
+    }
+
+    .floating-icon {
+      position: absolute;
+      animation: float 6s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-20px); }
+    }
+
+    .floating-icon:nth-child(1) { top: 10%; left: 15%; animation-delay: 0s; }
+    .floating-icon:nth-child(2) { top: 20%; right: 20%; animation-delay: 2s; }
+    .floating-icon:nth-child(3) { bottom: 30%; left: 10%; animation-delay: 4s; }
+
+    /* Blog Posts Section */
+    .blog-section {
+      padding: 0 0 6rem;
+    }
+
+    .section-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: white;
+      text-align: center;
+      margin-bottom: 4rem;
+      position: relative;
+      letter-spacing: -0.02em;
+    }
+
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -15px;
+      left: 50%;
+      width: 80px;
+      height: 4px;
+      background: var(--accent-gradient);
+      transform: translateX(-50%);
+      border-radius: 2px;
+    }
+
+    .section-title i {
+      font-size: 2rem;
+      margin-right: 1rem;
+      vertical-align: middle;
+    }
+
+    /* Post Cards */
+    .post-card {
+      background: var(--card-bg);
+      border-radius: 20px;
+      overflow: hidden;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      position: relative;
+      height: 100%;
+    }
+
+    .post-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: var(--primary-gradient);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .post-card:hover::before {
+      opacity: 1;
+    }
+
+    .post-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    }
+
+    .post-card-body {
+      padding: 2rem;
+    }
+
+    .post-title {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 1rem;
+      line-height: 1.3;
+    }
+
+    .post-meta {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1rem;
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+    }
+
+    .author-info {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .author-avatar {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: var(--primary-gradient);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: 600;
+      font-size: 0.8rem;
+    }
+
+    .post-content {
+      color: var(--text-secondary);
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+
+    .post-footer {
+      padding: 1rem 2rem;
+      background: rgba(248, 250, 252, 0.5);
+      border-top: 1px solid rgba(226, 232, 240, 0.5);
+    }
+
+    .read-more-btn {
+      background: var(--primary-gradient);
+      color: white;
+      border: none;
+      padding: 0.75rem 2rem;
+      border-radius: 50px;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-block;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .read-more-btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+      transition: left 0.6s ease;
+    }
+
+    .read-more-btn:hover::before {
+      left: 100%;
+    }
+
+    .read-more-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+      color: white;
+      text-decoration: none;
+    }
+
+    /* Empty State */
+    .empty-state {
+      text-align: center;
+      padding: 4rem 2rem;
+      color: #a0aec0;
+    }
+
+    .empty-state i {
+      font-size: 4rem;
+      margin-bottom: 1rem;
+      opacity: 0.5;
+    }
+
+    /* Footer */
+    footer {
+      background: var(--darker-bg);
+      color: #a0aec0;
+      padding: 2rem 0;
+      text-align: center;
+      border-top: 1px solid var(--border-color);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .hero-title {
+        font-size: 2.5rem;
+      }
+      
+      .hero-subtitle {
+        font-size: 1.1rem;
+      }
+      
+      .section-title {
+        font-size: 2rem;
+      }
+      
+      .floating-icon {
+        display: none;
+      }
+    }
+
+    /* Animations */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .post-card {
+      animation: fadeInUp 0.6s ease-out;
+    }
+
+    .post-card:nth-child(1) { animation-delay: 0.1s; }
+    .post-card:nth-child(2) { animation-delay: 0.2s; }
+    .post-card:nth-child(3) { animation-delay: 0.3s; }
+    .post-card:nth-child(4) { animation-delay: 0.4s; }
+  </style>
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container-fluid px-4">
+      <a class="navbar-brand" href="/">
+        <i class="bi bi-journal-text me-2"></i>FlaskBlog
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <i class="bi bi-plus-circle me-2"></i>Add Post
+            </a>
+          </li>
+          <li class="nav-item">
+            <span class="navbar-text">
+              <i class="bi bi-person-circle"></i>brindha
+            </span>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <i class="bi bi-box-arrow-right me-2"></i>Logout
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main content -->
+  <main>
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="container">
+        <div class="floating-icon">
+          <i class="bi bi-lightbulb" style="font-size: 2rem; color: rgba(255, 255, 255, 0.1);"></i>
+        </div>
+        <div class="floating-icon">
+          <i class="bi bi-heart" style="font-size: 1.5rem; color: rgba(255, 255, 255, 0.1);"></i>
+        </div>
+        <div class="floating-icon">
+          <i class="bi bi-star" style="font-size: 1.8rem; color: rgba(255, 255, 255, 0.1);"></i>
+        </div>
+        
+        <h1 class="hero-title">
+          Welcome to <span style="background: var(--secondary-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">FlaskBlog</span>
+        </h1>
+        <p class="hero-subtitle">Discover amazing stories, insights, and ideas from our community</p>
+      </div>
+    </section>
+
+    <!-- Blog Posts Section -->
+    <section class="blog-section">
+      <div class="container">
+        <h2 class="section-title">
+          <i class="bi bi-journal-bookmark me-3"></i>Recent Posts
+        </h2>
+
+        <div class="row g-4 justify-content-center">
+          <!-- Post Card 1 -->
+          <div class="col-lg-5 col-md-6">
+            <div class="post-card">
+              <div class="post-card-body">
+                <h3 class="post-title">Welcome post</h3>
+                <div class="post-meta">
+                  <div class="author-info">
+                    <div class="author-avatar">B</div>
+                    <span><strong>brindha</strong></span>
+                  </div>
+                  <span>•</span>
+                  <span><i class="bi bi-calendar3 me-1"></i>Jul 10, 2025</span>
+                </div>
+                <p class="post-content">
+                  The Calibraint interview process typically involves three rounds: a technical round, a coding test, and a group discussion. Some candidates may also e...
+                </p>
+              </div>
+              <div class="post-footer">
+                <a href="#" class="read-more-btn">
+                  <i class="bi bi-arrow-right me-2"></i>Read More
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Post Card 2 -->
+          <div class="col-lg-5 col-md-6">
+            <div class="post-card">
+              <div class="post-card-body">
+                <h3 class="post-title">First Blog</h3>
+                <div class="post-meta">
+                  <div class="author-info">
+                    <div class="author-avatar">B</div>
+                    <span><strong>Brindha</strong></span>
+                  </div>
+                  <span>•</span>
+                  <span><i class="bi bi-calendar3 me-1"></i>Jul 03, 2025</span>
+                </div>
+                <p class="post-content">
+                  helooo this me writing my first blog.... Welcome to my journey of sharing thoughts, experiences, and insights through the world of blogging.
+                </p>
+              </div>
+              <div class="post-footer">
+                <a href="#" class="read-more-btn">
+                  <i class="bi bi-arrow-right me-2"></i>Read More
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Empty State (for when no posts exist) -->
+        <!-- 
+        <div class="empty-state">
+          <i class="bi bi-journal-x"></i>
+          <h3>No posts yet</h3>
+          <p>Be the first to share your thoughts!</p>
+        </div>
+        -->
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p class="mb-0">© 2025 FlaskBlog. Built with <i class="bi bi-heart-fill" style="color: #e53e3e;"></i> and Flask.</p>
+    </div>
+  </footer>
+
+  <!-- Bootstrap Bundle JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+>>>>>>> 2a74483 (UI Update)
 </html>
