@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block title %}{{ title or 'Create Post' }} | FlaskBlog{% endblock %}
+
+{% block content %}
+<div class="container">
+  <div class="form-container">
+    <h2 class="form-title">{{ title or 'Create New Post' }}</h2>
+    
+    <form method="POST">
+      {{ form.hidden_tag() }}
+      
+      <div class="form-group">
+        {{ form.title.label(class="form-label") }}
+        {{ form.title(class="form-control" + (" is-invalid" if form.title.errors else "")) }}
+        {% if form.title.errors %}
+          <div class="invalid-feedback">
+            {% for error in form.title.errors %}
+              <span>{{ error }}</span>
+            {% endfor %}
+          </div>
+        {% endif %}
+      </div>
+      
+      <div class="form-group">
+        {{ form.content.label(class="form-label") }}
+        {{ form.content(class="form-control" + (" is-invalid" if form.content.errors else ""), rows="10", placeholder="Share your thoughts...") }}
+        {% if form.content.errors %}
+          <div class="invalid-feedback">
+            {% for error in form.content.errors %}
+              <span>{{ error }}</span>
+            {% endfor %}
+          </div>
+        {% endif %}
+      </div>
+      
+      <div class="form-group">
+        {{ form.submit(class="btn-primary") }}
+      </div>
+    </form>
+    
+    <div class="text-center mt-3">
+      <a href="{{ url_for('index') }}" class="btn-secondary">
+        <i class="bi bi-arrow-left me-2"></i>Cancel
+      </a>
+    </div>
+  </div>
+</div>
+{% endblock %}
